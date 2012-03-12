@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container-fluid">
+    <header>
+      <h1>FIN Vorkurs</h1>
+    </header>
+    <% flash.each do |key, message| %>
+      <%= content_tag :div, message, :class => key %>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

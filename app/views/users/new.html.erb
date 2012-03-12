@@ -1,0 +1,18 @@
+<h1>Registrieren</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.text_field :email, :placeholder => "Email" %>
+  <%= f.password_field :password, :placeholder => "Passwort" %>
+  <%= f.password_field :password_confirmation, :placeholder => "Passwort wiederholen" %>
+  <%= f.submit %>
+<% end %>
+

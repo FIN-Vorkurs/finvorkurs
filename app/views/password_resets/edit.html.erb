@@ -1,0 +1,17 @@
+<h1>Password Ändern</h1>
+
+<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.password_field :password, :placeholder => "Neues Passwort" %>
+  <%= f.password_field :password_confirmation, :placeholder => "Neues Passwort bestätigen" %>
+  <%= f.submit "Senden" %>
+<% end %>

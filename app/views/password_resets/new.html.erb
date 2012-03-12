@@ -1,0 +1,5 @@
+<h1>Passwort vergessen?</h1>
+<%= form_tag password_resets_path, :method => :post do %>
+  <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+  <%= submit_tag "Sende Email" %>
+<% end %>
