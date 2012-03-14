@@ -1,0 +1,144 @@
+/* Author: Martin Knoll */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer, section, aside, nav, article {
+  display: block;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 1em 0 1em 0;
+}
+
+h3 {
+  font-size: 1.1667em;
+  line-height: 1.286em;
+  margin: 1.929em 0 0.643em 0;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1.5em 0;
+}
+
+blockquote {
+  font-size: 1em;
+  font-style: italic;
+  line-height: 1.5em;
+  text-align: center;
+  margin: 1.5em 1.5em;
+}
+
+cite {
+  display: block;
+  font-size: 1em;
+  font-style: normal;
+  line-height: 1.5em;
+  text-align: right;
+  margin: -1.5em 0 1.5em 0;
+}
+
+ul {
+  margin: 1.5em 0;
+  padding-left: 3em;
+}
+
+ol {
+  margin: 1.5em 0;
+  padding-left: 3em;
+}
+
+li {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0;
+}
+
+hr {
+  height: 0.1em;
+  margin: 1.5em 0 0 0;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  margin: 1.5em auto;
+  border: 0.1em solid;
+}
+
+div.caption {
+  font-size: 0.8333em;
+  line-height: 1.8em;
+  text-align: center;
+  margin: -1.8em 0 1.8em 0;
+}
+
+pre {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1.5em 0;
+  padding-left: 1em;
+}
+
+input {
+  font-family: inherit;
+}
+
+input[type="text"], input[type="password"], textarea {
+  border-radius: 4px;
+  border: 1px solid #999;
+  font-size: 1em;
+  width: 18em;
+  padding: 0.2em;
+  margin-bottom: 1.5em;
+}
+
+input[type="submit"] {
+  padding: 0.3em 0.6em 0.3em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #06c;
+  background-image: -webkit-linear-gradient(top, #08c, #04c);
+  border-radius: 4px;
+  border: 1px solid #fff;
+  border-color: #04C #04C #028;
+  cursor: pointer;
+  margin-bottom: 1.5em;  
+}
+
+input[type="submit"]:hover {
+  background-image: -webkit-linear-gradient(top, #07b, #03b);
+  box-shadow: 0 0 3px #999;
+}
+
+input[type="submit"]:active {
+  background-image: none;
+}
+
+textarea {
+  height: 10em;
+}
+
+label {
+  display: block;
+}

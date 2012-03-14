@@ -1,5 +1,8 @@
+<section id="password_reset">
 <h1>Passwort vergessen?</h1>
+<p>Nenne deine Email Adresse und wir senden dir eine Email mit weiteren Instruktionen</p>
 <%= form_tag password_resets_path, :method => :post do %>
   <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
   <%= submit_tag "Sende Email" %>
 <% end %>
+</section>
