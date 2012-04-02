@@ -66,3 +66,15 @@ section#features > div {
   width: 33%;
   padding: 0 1em;
 }
+
+@media screen and (max-width: 680px) {
+
+  section#features {
+    display: block;
+  }
+
+  section#features > div {
+    display: block;
+    width: 90%;
+  }
+}
