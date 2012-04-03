@@ -1,0 +1,6 @@
+<% if user = current_user %>
+  <%= link_to user.email, edit_user_path(user) %> |
+   <%= link_to "Abmelden", logout_path %>
+<% else %>
+  <%= link_to "Anmelden", login_path %>
+<% end %>

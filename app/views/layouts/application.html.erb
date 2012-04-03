@@ -8,7 +8,7 @@
 </head>
 <body>
   <nav>
-  <div id="user_bar"><%= link_to "Anmelden", login_path %></div>
+  <div id="user_bar"><%= render "user_bar" %></div>
   </nav>
   <% flash.each do |key, message| %>
     <%= content_tag :div, message, :class => twitterized_type(key) %>
