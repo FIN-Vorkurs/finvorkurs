@@ -1,0 +1,6 @@
+<section id="posts">
+<h1>Infos</h1>
+<% @posts.reverse.each do |post| %>
+  <%= render "post", :post => post %>
+<% end %>
+</section>

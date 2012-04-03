@@ -5,20 +5,17 @@ body {
   margin: 0 1em;
 }
 
-nav {
+div#user_bar {
   width: 100%;
   background-color: #37a;
   line-height: 2em;
   color: #fff;
   margin: 0 -1em;
   padding: 0 1em;
-}
-
-nav > div#user_bar {
   text-align: right;
 }
 
-nav a, nav a:hover {
+div#user_bar a, div#user_bar a:hover {
   color: #fff;
 }
 
@@ -27,12 +24,14 @@ section#signup, section#login, section#password_reset {
   margin-bottom: 6em;
 }
 
-header{
-  margin-top: 1.5em;
+header {
+  padding: 1.5em 0;
+  display: table;
+  border-bottom: 1px solid #eee;
 }
 
 header h1 {
-  display: inline;
+  display: table-cell;
   font-weight: bold;
   text-shadow: 1px 1px 3px #ccc;
 }
@@ -47,6 +46,33 @@ header h1 > span.dots {
 
 header h1 > span.vorkurs {
   color: #f92;
+}
+
+nav {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+nav ul {
+  display: block;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  text-align: center;
+  margin-left: 0.666em;
+  font-size: 1.5em;
+  width: 8em;
+}
+
+nav li a {
+  color: #aaa;
+  text-shadow: 1px 1px 3px #eee;
+
 }
 
 section#teaser {
@@ -67,7 +93,31 @@ section#features > div {
   padding: 0 1em;
 }
 
+form.edit_user {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+form.edit_user > input {
+  display: block;
+}
+
+article#legal {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+section#posts {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+
 @media screen and (max-width: 680px) {
+
+  header, nav, header h1 {
+    display: block;
+  }
 
   section#features {
     display: block;

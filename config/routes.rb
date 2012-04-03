@@ -4,10 +4,12 @@ FinVorkurs::Application.routes.draw do
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "sessions#new", :as => "login"
     get "signup" => "users#new", :as => "signup"
+    get "legal" => "legal#index", :as => "legal"
 
     resources :users
     resources :sessions
     resources :password_resets
+    resources :posts
 
     # The priority is based upon order of creation:
     # first created -> highest priority.

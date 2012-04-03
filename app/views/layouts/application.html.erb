@@ -7,19 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
   <div id="user_bar"><%= render "user_bar" %></div>
-  </nav>
-  <% flash.each do |key, message| %>
-    <%= content_tag :div, message, :class => twitterized_type(key) %>
-  <% end %>
   <header>
     <%= link_to root_url do %>
       <h1>
         <span class="fin">FIN</span><span class="dots">::</span><span class="vorkurs">Vorkurs</span>
       </h1>
     <% end %>
+    <nav>
+      <ul>
+        <li><%= link_to "Infos", posts_path %></li>
+        <li><%= link_to "Impressum", legal_path %></li>
+      </ul>
+    </nav>
   </header>
+  <% flash.each do |key, message| %>
+    <%= content_tag :div, message, :class => twitterized_type(key) %>
+  <% end %>
     <%= yield %>
 </body>
 </html>

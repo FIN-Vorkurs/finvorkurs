@@ -1,0 +1,19 @@
+<%= form_for @user do |f| %>
+  <h1>Account</h1>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.label :password, "Neues Password" %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation, "Neues Password wiederholen" %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "Ändern" %>
+<% end %>
