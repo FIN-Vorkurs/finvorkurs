@@ -65,15 +65,14 @@ nav ul {
 nav li {
   display: inline-block;
   text-align: center;
-  margin-left: 0.666em;
+  margin: 0 1em;
   font-size: 1.5em;
-  width: 8em;
+  width: 6em;
 }
 
 nav li a {
   color: #aaa;
   text-shadow: 1px 1px 3px #eee;
-
 }
 
 section#teaser {
@@ -116,8 +115,13 @@ section#posts {
 
 @media screen and (max-width: 680px) {
 
-  header, nav, header h1 {
+  header, nav {
     display: block;
+    text-align: center;
+  }
+
+  header h1 {
+    display: inline;
   }
 
   section#features {
@@ -127,5 +131,10 @@ section#posts {
   section#features > div {
     display: block;
     width: 90%;
+  }
+
+  nav ul {
+    margin-top: 1em; 
+    text-align: center;
   }
 }

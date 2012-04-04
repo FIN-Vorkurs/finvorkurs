@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver
   end
 
+  ADMIN = 2
+  TUTOR = 1
+  USER = 0
+
 end

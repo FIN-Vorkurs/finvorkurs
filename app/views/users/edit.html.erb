@@ -16,4 +16,6 @@
   <%= f.label :password_confirmation, "Neues Password wiederholen" %>
   <%= f.password_field :password_confirmation %>
   <%= f.submit "Ändern" %>
+  <%= link_to "Account löschen", @user, :method => :delete, 
+    :confirm => "Achtung! Account wirklich löschen?" %>
 <% end %>

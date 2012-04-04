@@ -1,3 +1,4 @@
+# coding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
@@ -8,7 +9,13 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    !!current_user or redirect_to login_url, :notice => "Login first!"
+    !!current_user or redirect_to login_url, :notice => "Erst einloggen!"
+  end
+
+  def authenticate_admin!
+    user = current_user and 
+      user.role >= User::ADMIN or 
+        redirect_to login_url, :notice => "Nur für Admins!"
   end
 
   helper_method :current_user, :authenticate_user!

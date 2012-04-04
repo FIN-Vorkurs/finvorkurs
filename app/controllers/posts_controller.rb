@@ -1,5 +1,7 @@
 # encoding: utf-8
 class PostsController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:index, :show]
+
   def index
     @posts = Post.order :created_at
   end
