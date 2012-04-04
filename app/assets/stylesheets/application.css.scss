@@ -25,9 +25,10 @@ section#signup, section#login, section#password_reset {
 }
 
 header {
-  padding: 1.5em 0;
+  padding: 1.5em 1em;
+  margin: 0 -1em;
   display: table;
-  border-bottom: 1px solid #eee;
+  box-shadow: 0 5px 10px #eee;
 }
 
 header h1 {

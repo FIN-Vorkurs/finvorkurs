@@ -1,7 +1,8 @@
 <section id="password_reset">
-<h1>Password Ändern</h1>
+<h1>Password ändern</h1>
 
-<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+<%= form_for @user, :url => password_reset_path(params[:id]), 
+  :html => {:class => "password_reset"} do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
