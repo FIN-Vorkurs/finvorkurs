@@ -2,7 +2,7 @@
 <h1>Anmelden</h1>
 
 <%= form_tag sessions_path do %>
-  <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+  <%= email_field_tag :email, params[:email], :placeholder => "Email" %>
   <%= password_field_tag :password, params[:password], :placeholder => "Passwort" %>
   <%= submit_tag "Anmelden" %><br />
   <%= link_to "Passwort vergessen?", new_password_reset_path %>
