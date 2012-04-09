@@ -15,7 +15,8 @@
   <%= f.password_field :password %>
   <%= f.label :password_confirmation, "Neues Password wiederholen" %>
   <%= f.password_field :password_confirmation %>
-  <%= f.submit "Ändern" %>
-  <%= link_to "Account löschen", @user, :method => :delete, 
-    :confirm => "Achtung! Account wirklich löschen?" %>
+  <%= f.submit "Ändern", :class => "btn btn-primary" %>
+  <h2>Account löschen</h2>
+  <%= link_to "Account permanent löschen", @user, :method => :delete, 
+    :confirm => "Achtung! Account wirklich löschen?", :class => "btn btn-danger" %>
 <% end %>

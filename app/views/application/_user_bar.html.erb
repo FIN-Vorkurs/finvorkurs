@@ -1,4 +1,5 @@
 <% if user = current_user %>
+  <%= render 'admin_bar' if user.role == User::ADMIN %>
   <%= link_to user.email, edit_user_path(user) %> |
    <%= link_to "Abmelden", logout_path %>
 <% else %>

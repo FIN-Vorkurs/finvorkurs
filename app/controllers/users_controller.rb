@@ -13,21 +13,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    unless @user == current_user || current_user.role == User::ADMIN
-      redirect_to root_url, :flash => {:error => "Authentifizierungsfehler"}
-    end
+    check_permission!
   end
 
   def update
     @user = User.find(params[:id])
-    if @user == current_user || current_user.role == User::ADMIN
-      if @user.update_attributes(params[:user])
-        redirect_to edit_user_path, :notice => "Daten geändert"
-      else
-        render :action => "edit"
-      end
+    check_permission!
+    if @user.update_attributes(params[:user])
+      redirect_to edit_user_path, :notice => "Daten geändert"
     else
-      redirect_to root_url, :flash => {:error => "Authentifizierungsfehler"}
+      render :action => "edit"
     end
   end
 
@@ -43,12 +38,23 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    if @user == current_user || current_user.role == User::ADMIN
+    if @user == current_user
       @user.destroy
       session.delete :user_id
 	  redirect_to root_url, :notice => "Account gelöscht"
+    elsif current_user.role == User::ADMIN
+      @user.destroy
+      redirect_to :users, :notice => "Account gelöscht"
     else
-      redirect_to root_url, :flash => {:error => "Authentifizierungsfehler"}
+      exit
+    end
+  end
+
+  private
+
+  def check_permission!
+    unless @user == current_user || current_user.role == User::ADMIN
+      abort "No Permission"
     end
   end
 end
