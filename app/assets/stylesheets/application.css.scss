@@ -112,6 +112,18 @@ section#posts {
   margin: 0 auto;
 }
 
+section#new_post {
+  margin: 0 auto;
+  max-width: 40em;
+}
+
+section#new_post input, section#new_post textarea {
+  display: block;
+}
+
+section#new_post input[type="text"], section#new_post textarea {
+  width: 100%;
+}
 
 @media screen and (max-width: 680px) {
 

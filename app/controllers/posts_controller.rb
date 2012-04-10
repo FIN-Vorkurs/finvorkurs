@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     if @post.save
-      redirect_to @post, :notice => 'Post erfolgreich erstellt'
+      redirect_to posts_path, :notice => 'Nachricht erstellt'
     else
       render :action => "new"
     end
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      redirect_to @post, :notice => 'Post erfolgreich geändert'
+      redirect_to @post, :notice => 'Nachricht geändert'
     else
       render :action => "edit"
     end
@@ -42,6 +42,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_url
+    redirect_to posts_path, :notice => 'Nachricht gelöscht'
   end
 end

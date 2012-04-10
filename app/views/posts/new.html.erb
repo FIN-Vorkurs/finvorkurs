@@ -1,2 +1,8 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<section id="new_post">
+  <h1>Neue Nachricht</h1>
+  <%= form_for @post do |f| %>
+    <%= f.text_field :title, placeholder: "Titel" %>
+    <%= f.text_area :content, placeholder: "Inhalt" %>
+    <%= f.submit %>
+  <% end %>
+</section>
