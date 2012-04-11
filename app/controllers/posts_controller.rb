@@ -22,6 +22,9 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     if @post.save
+      User.all.each do |u|
+        u.send_newsletter @post
+      end
       redirect_to posts_path, :notice => 'Nachricht erstellt'
     else
       render :action => "new"

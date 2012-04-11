@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     UserMailer.new_user_notification(self, user).deliver
   end
 
+  def send_newsletter post
+    UserMailer.send_newsletter_to_user(self, post).deliver
+  end
+
   ADMIN = 2
   TUTOR = 1
   USER = 0
