@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
+      send_notification_to_admins @user
       redirect_to root_url, :notice => "Registrierung erfolgreich!"
     else
       render "new"
@@ -55,6 +56,13 @@ class UsersController < ApplicationController
   def check_permission!
     unless @user == current_user || current_user.role == User::ADMIN
       abort "No Permission"
+    end
+  end
+
+  def send_notification_to_admins user
+    admins = User.find_all_by_role User::ADMIN
+    admins.each do |a|
+      a.send_new_user_notification user
     end
   end
 end

@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver
   end
 
+  def send_new_user_notification user
+    UserMailer.new_user_notification(self, user).deliver
+  end
+
   ADMIN = 2
   TUTOR = 1
   USER = 0

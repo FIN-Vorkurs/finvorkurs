@@ -6,4 +6,9 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail :to => user.email, :subject => "Passwort zurücksetzen"
   end
+
+  def new_user_notification admin, user
+    @user = user
+    mail to: admin.email, subject: "Neuer Account angelegt: #{user.email}"
+  end
 end
