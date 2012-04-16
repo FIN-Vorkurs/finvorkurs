@@ -1,0 +1,17 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.course {
+  display: inline-block;
+  height: 7em;
+  width: 7em;
+  -webkit-border-radius: 3.8em;
+  background: #ace;
+  text-align: center;
+  line-height: 7em;
+  border: 0.3em solid #7be;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #146;
+}

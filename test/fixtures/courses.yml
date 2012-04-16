@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  fee: 1
+  from: 2012-04-13
+  to: 2012-04-13
+  test: 
+
+two:
+  title: MyString
+  description: MyText
+  fee: 1
+  from: 2012-04-13
+  to: 2012-04-13
+  test: 

@@ -1,15 +1,14 @@
 FinVorkurs::Application.routes.draw do
 
+  get "courses/index"
+
   scope ENV['RAILS_RELATIVE_URL_ROOT'] || '/' do
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "sessions#new", :as => "login"
     get "signup" => "users#new", :as => "signup"
     get "legal" => "legal#index", :as => "legal"
 
-    resources :users
-    resources :sessions
-    resources :password_resets
-    resources :posts
+    resources :users, :sessions, :password_resets, :posts, :courses
 
     # The priority is based upon order of creation:
     # first created -> highest priority.
