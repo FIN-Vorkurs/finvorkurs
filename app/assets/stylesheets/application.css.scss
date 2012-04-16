@@ -85,12 +85,12 @@ section#teaser {
 
 section#features {
   margin: 0 -1em;
-  display: table;
 }
 
 section#features > div {
-  display: table-cell;
-  width: 33%;
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
   padding: 0 1em;
 }
 
@@ -126,8 +126,13 @@ section#new_post input[type="text"], section#new_post textarea {
   width: 100%;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 835px) {
+  section#features > div {
+    width: 45%;
+  }
+}
 
+@media screen and (max-width: 680px) {
   header, nav {
     display: block;
     text-align: center;
