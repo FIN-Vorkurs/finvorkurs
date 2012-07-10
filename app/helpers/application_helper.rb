@@ -14,4 +14,11 @@ module ApplicationHelper
         type.to_s
     end
   end
+
+  def ie
+    if request.env['HTTP_USER_AGENT'].match /MSIE/
+      yield
+    end
+  end
+
 end

@@ -2,16 +2,82 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.course {
+section#courses {
+  vertical-align: top;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.description {
+  text-align: left;
+  vertical-align: top;
+  width: 20em;
   display: inline-block;
-  height: 7em;
-  width: 7em;
-  -webkit-border-radius: 3.8em;
+}
+
+div.course {
+  background: #f0f0f0;
+  display: inline-block;
+  margin: 2.5em;
+  padding: 2.5em;
+  -webkit-border-radius: 1em;
+  -webkit-box-shadow: inset 0 0 0.5em #ccc;
+}
+
+div.test, div.register {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  height: 10em;
+  width: 10em;
+  -webkit-border-radius: 5.3em;
   background: #ace;
   text-align: center;
-  line-height: 7em;
-  border: 0.3em solid #7be;
-  font-weight: bold;
-  font-size: 1.5em;
-  color: #146;
+//  line-height: 7em;
+  border: 0.2em solid #7be;
+  -webkit-box-shadow: 0 0 0 0.4em #ace;
+  font-weight: lighter;
+  font-size: 1.25em;
+  color: #257;
+}
+
+div.done {
+  color: #275;
+  background: #7eb;
+  border: 0.2em solid #6da;
+  -webkit-box-shadow: 0 0 0 0.4em #7eb;
+}
+
+div.test > span {
+  margin: 3.7em auto;;
+  display: inline-block;
+}
+
+div.register > span {
+  margin: 2.9em auto;
+  display: inline-block;
+}
+
+
+div.test {
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
+}
+
+div.register {
+  height: 8em;
+  width: 8em;
+  -webkit-border-radius: 4.3em;
+}
+
+
+div.test::after {
+  position: absolute;
+  top: 10.55em;
+  left: 4.8em;
+  content: '';
+  border: 0.2em solid #777;
+  background: #777;
+  height: 2.5em;
 }

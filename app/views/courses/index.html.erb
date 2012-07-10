@@ -1,6 +1,33 @@
 <section id="courses">
-  <h1>Kurse</h1>
-  <% @courses.each do |course| %>
-    <div class="course">Anmeldung</div>
+  <div class="description">
+    <h1>Kurse</h1>
+    <p>
+    Hier kannst du dich verbindlich zu den Vorkursen anmelden. Die Teilname an den Tests ist nicht zwingend erforderlich, aber da wir Gruppen mit verschiedenen Vorkenntnissen zusammenstellen, ist es für dich sehr hilfreich, wenn du teilnimmst. Es dauert nur ein paar Minuten.
+    </p>
+    <p>
+    Für die Vorkurse ist eine Teilnamegebühr von jeweils 10€ fällig, die du dann am ersten Tag einfach mitbringst.
+    </p>
+    <p>
+    Wenn du Probleme mit der Anmeldung hast, schreib uns eine Mail an <a href="mailto:vorkurs@farafin.de"> vorkurs@farafin.de</a>.
+    </p>
+  </div>
+<% @courses.each do |course| %>
+  <div class="course">
+    <h2><%= course.title %></h1>
+    <div class="test">
+      <span>Test zur Selbsteinschätzung</span>
+    </div>
+    <% if @user && @user.in_course?(course) %>
+      <div class="register done">
+        <span>du bist <br /> angemeldet</span>
+      </div>
+    <% else %>
+      <%= link_to new_course_enrollment_path(course) do %>
+        <div class="register">
+            <span>zum Kurs <br /> anmelden</span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <% end %>
 </section>

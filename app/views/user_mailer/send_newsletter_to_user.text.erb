@@ -1,19 +1,19 @@
 <% # Coding: UTF-8 %>
-Hallo <NAME>,
+Hallo <%= @user.name || "Interessent" %>,
 
 es gibt Neuigkeiten zum Vorkurs.
 
 <%= @post.title %>
-<%= @post.created_at %>
 <%= @post.content %>
 
+<%= @post.created_at %>
 
 
 Freundliche Grüße
 
-<AUTOR>
+dein Vorkurs Orga-Team
 
-
+--- 
 Du erhälst diese Nachricht, weil du einen Account auf der Seite des Vorkurses
 der Fakultät für Informatik an der OvGU hast.
 

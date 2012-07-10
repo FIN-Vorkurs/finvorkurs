@@ -17,4 +17,10 @@ class UserMailer < ActionMailer::Base
     @post = post
     mail to: user.email, subject: post.title
   end
+
+  def send_enrollment_confirmation_to_user user, course
+    @user = user
+    @course = course
+    mail to: user.email, subject: "[FIN Vorkurs] Anmeldebestätigung #{course.title}"
+  end
 end

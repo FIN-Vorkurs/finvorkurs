@@ -8,7 +8,14 @@ FinVorkurs::Application.routes.draw do
     get "signup" => "users#new", :as => "signup"
     get "legal" => "legal#index", :as => "legal"
 
-    resources :users, :sessions, :password_resets, :posts, :courses
+    resources :users, 
+              :sessions, 
+              :password_resets, 
+              :posts
+
+    resources :courses do
+      resources :enrollments
+    end
 
     # The priority is based upon order of creation:
     # first created -> highest priority.

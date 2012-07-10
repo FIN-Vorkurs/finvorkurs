@@ -13,9 +13,13 @@
       </ul>
     </div>
   <% end %>
+  <%= ie { f.label :email, "Email" } %>
   <%= f.email_field :email, :placeholder => "Email" %>
+  <%= ie { f.label :password, "Passwort" } %>
   <%= f.password_field :password, :placeholder => "Passwort" %>
+  <%= ie { f.label :password_confirmation, "Passwort wiederholen" } %>
   <%= f.password_field :password_confirmation, :placeholder => "Passwort wiederholen" %>
+  <%= ie { raw '<br />' } %>
   <%= f.submit "Registrieren" %>
 <% end %>
 </section>

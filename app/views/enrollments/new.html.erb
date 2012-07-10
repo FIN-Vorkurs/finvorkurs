@@ -1,0 +1,18 @@
+<%= form_for [@course, @enrollment] do |f| %>
+  <h1>Kursanmeldung</h1>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= fields_for @user do |u| %>
+    <%= u.label :name, "Bitte ergänze deinen Vor- und Nachnamen" %>
+    <%= u.text_field :name, :placeholder => "Name" %>
+  <% end %>
+  <%= f.submit "verbindlich anmelden" %>
+  <p><b>Hinweis:</b> für den Kurs ist eine Teilnahmegebühr von 10€ fällig, die du dann am ersten Tag einfach mitbringst.</p>
+<% end %>

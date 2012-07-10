@@ -11,11 +11,22 @@
   <% end %>
   <%= f.label :email %>
   <%= f.email_field :email %>
+  <%= f.label :name, "Name"%>
+  <%= f.text_field :name %>
   <%= f.label :password, "Neues Password" %>
   <%= f.password_field :password %>
   <%= f.label :password_confirmation, "Neues Password wiederholen" %>
   <%= f.password_field :password_confirmation %>
   <%= f.submit "Ändern", :class => "btn btn-primary" %>
+  <h2> Kursanmeldungen </h2>
+  <ul>
+    <% @user.enrollments.each do |e| %>
+      <li>
+        <%= e.course.title %>
+        <%= link_to "abmelden", [e.course, e], method: :delete, confirm: "Willst du dich wirklich vom Kurs #{e.course.title} abmelden?" %>
+      </li>
+    <% end %>
+  </ul>
   <h2>Account löschen</h2>
   <%= link_to "Account permanent löschen", @user, :method => :delete, 
     :confirm => "Achtung! Account wirklich löschen?", :class => "btn btn-danger" %>

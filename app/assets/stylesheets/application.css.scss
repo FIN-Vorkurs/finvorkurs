@@ -94,12 +94,12 @@ section#features > div {
   padding: 0 1em;
 }
 
-form.edit_user, section.users {
+form.edit_user, section.users, form.new_enrollment {
   max-width: 40em;
   margin: 0 auto;
 }
 
-form.edit_user > input {
+form.edit_user > input, form.new_enrollment > input {
   display: block;
 }
 
