@@ -1,5 +1,7 @@
 FinVorkurs::Application.routes.draw do
 
+  get "logs/index"
+
   get "courses/index"
 
   scope ENV['RAILS_RELATIVE_URL_ROOT'] || '/' do
@@ -11,7 +13,8 @@ FinVorkurs::Application.routes.draw do
     resources :users, 
               :sessions, 
               :password_resets, 
-              :posts
+              :posts,
+              :logs
 
     resources :courses do
       resources :enrollments
