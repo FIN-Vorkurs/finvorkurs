@@ -22,7 +22,10 @@ div.course {
   margin: 2.5em;
   padding: 2.5em;
   -webkit-border-radius: 1em;
+  border-radius: 1em;
+  border-radius: 1em;
   -webkit-box-shadow: inset 0 0 0.5em #ccc;
+  box-shadow: inset 0 0 0.5em #ccc;
 }
 
 div.test, div.register {
@@ -32,11 +35,13 @@ div.test, div.register {
   height: 10em;
   width: 10em;
   -webkit-border-radius: 5.3em;
+  border-radius: 5.3em;
   background: #ace;
   text-align: center;
 //  line-height: 7em;
   border: 0.2em solid #7be;
   -webkit-box-shadow: 0 0 0 0.4em #ace;
+  box-shadow: 0 0 0 0.4em #ace;
   font-weight: lighter;
   font-size: 1.25em;
   color: #257;
@@ -47,6 +52,7 @@ div.done {
   background: #7eb;
   border: 0.2em solid #6da;
   -webkit-box-shadow: 0 0 0 0.4em #7eb;
+  box-shadow: 0 0 0 0.4em #7eb;
 }
 
 div.test > span {
@@ -69,6 +75,7 @@ div.register {
   height: 8em;
   width: 8em;
   -webkit-border-radius: 4.3em;
+  border-radius: 4.3em;
 }
 
 
