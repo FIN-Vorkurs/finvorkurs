@@ -14,6 +14,9 @@
 <% @courses.each do |course| %>
   <div class="course">
     <h2><%= course.title %></h1>
+    <% if current_user && current_user.role >= User::ADMIN %>
+      <%= link_to "Teilnehmer", course %>
+    <% end %>
     <div class="test">
       <span>Test zur Selbsteinschätzung</span>
     </div>
