@@ -130,6 +130,10 @@ section#new_post input[type="text"], section#new_post textarea {
   section#features > div {
     width: 45%;
   }
+  
+  #fork_me {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 680px) {
