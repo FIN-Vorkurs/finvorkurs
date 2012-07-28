@@ -17,9 +17,17 @@
     <% if current_user && current_user.role >= User::ADMIN %>
       <%= link_to "Teilnehmer", course %>
     <% end %>
-    <div class="test">
-      <span>Test zur Selbsteinschätzung</span>
-    </div>
+    <% if true# @user and @user.test_results.where(course_id: course.id).first and @user.test_results.where(course_id: course.id).first.score %>
+      <div class="test done">
+        <span>in <br /> Arbeit</span><!--<span>Test <br /> abgeschlossen</span>-->
+      </div>
+    <% else %>
+      <%= link_to new_course_test_path(course) do %>
+        <div class="test">
+            <span>Test zur Selbsteinschätzung</span>
+        </div>
+      <% end %>
+    <% end %>
     <% if @user && @user.in_course?(course) %>
       <div class="register done">
         <span>du bist <br /> angemeldet</span>

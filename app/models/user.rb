@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :enrollments, dependent: :destroy
   has_many :courses, through: :enrollments
+  has_many :replies
+  has_many :answers, through: :replies
+  has_many :questions, through: :answers
+  has_many :test_results
   attr_accessible :email, :name, :password, :password_confirmation
   validates :password, :presence => true, :on => :create
   validates :email, :uniqueness => true
@@ -34,6 +38,10 @@ class User < ActiveRecord::Base
 
   def in_course? course
     self.courses.include? course
+  end
+
+  def answers_for course
+    self.answers.joins(:question).where questions: {course_id: course}
   end
 
 

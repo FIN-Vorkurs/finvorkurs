@@ -1,0 +1,21 @@
+<section class="question">
+<h2>Frage</h2>
+<p class="text"><%= @question.text %></p>
+<h3>Antworten</h3>
+<ol>
+  <% @question.answers.each do |answer| %>
+    <li><%= link_to answer.text, course_replies_path(answer_id: answer.id), method: :post %></li>
+  <% end %>
+</ol>
+<% if current_user.role >= User::ADMIN %>
+  <%= form_for [@course, @question, @question.answers.build] do |f| %>
+    <%= f.text_field :text, placeholder: "Antwort" %>
+    <%= f.check_box :correct  %>Korrekt<br />
+    <%= f.submit "hinzufügen" %>
+    <%= link_to "Neue Frage", new_course_question_path(@course) %>
+  <% end %>
+<% end %>
+<div class="progress progress-striped">
+  <div class="bar" style="width: <%= @user.answers_for(@course).count * 100 / @course.questions.count %>%;"></div>
+</div>
+</section>

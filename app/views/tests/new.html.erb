@@ -1,0 +1,6 @@
+<section class="centered">
+<h1><%= @course.title %></h1>
+<h2>Test zur Selbsteinschätzung</h2>
+<p><%= @course.description %></p>
+<%= link_to "Starten", (@course.resume_test_path(@user) || course_tests_path(@course)), :class => "btn btn-primary" %> 
+<section>

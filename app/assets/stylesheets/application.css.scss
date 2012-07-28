@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "typography";
 @import "courses";
+@import "questions";
 
 body {
   margin: 0 1em;
@@ -99,6 +100,11 @@ form.edit_user, section.users, form.new_enrollment {
   margin: 0 auto;
 }
 
+.centered {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
 form.edit_user > input, form.new_enrollment > input {
   display: block;
 }
@@ -124,6 +130,15 @@ section#new_post input, section#new_post textarea {
 
 section#new_post input[type="text"], section#new_post textarea {
   width: 100%;
+}
+
+.result {
+  text-align: center;
+}
+
+.result p {
+  margin: 1em auto;
+  font-size: 4em;
 }
 
 @media screen and (max-width: 835px) {

@@ -1,9 +1,5 @@
 FinVorkurs::Application.routes.draw do
 
-  get "logs/index"
-
-  get "courses/index"
-
   scope ENV['RAILS_RELATIVE_URL_ROOT'] || '/' do
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "sessions#new", :as => "login"
@@ -18,6 +14,11 @@ FinVorkurs::Application.routes.draw do
 
     resources :courses do
       resources :enrollments
+      resources :tests
+      resources :replies
+      resources :questions do
+        resources :answers
+      end
     end
 
     # The priority is based upon order of creation:
