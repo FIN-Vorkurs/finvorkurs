@@ -5,27 +5,30 @@
 -->
 <%= render "teaser" %>
 <section id="signup">
-<h1>Interesse?</h1>
+<% if not current_user %>
+  <h1>Interesse?</h1>
 
-<p>Erstelle einen Account und wir halten dich auf dem Laufenden.</p>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <p>Erstelle einen Account und wir halten dich auf dem Laufenden.</p>
+
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= ie { f.label :email, "Email" } %>
+    <%= f.email_field :email, :placeholder => "Email" %>
+    <%= ie { f.label :password, "Passwort" } %>
+    <%= f.password_field :password, :placeholder => "Passwort" %>
+    <%= ie { f.label :password_confirmation, "Passwort wiederholen" } %>
+    <%= f.password_field :password_confirmation, :placeholder => "Passwort wiederholen" %>
+    <%= ie { raw '<br />' } %>
+    <%= f.submit "Registrieren" %>
   <% end %>
-  <%= ie { f.label :email, "Email" } %>
-  <%= f.email_field :email, :placeholder => "Email" %>
-  <%= ie { f.label :password, "Passwort" } %>
-  <%= f.password_field :password, :placeholder => "Passwort" %>
-  <%= ie { f.label :password_confirmation, "Passwort wiederholen" } %>
-  <%= f.password_field :password_confirmation, :placeholder => "Passwort wiederholen" %>
-  <%= ie { raw '<br />' } %>
-  <%= f.submit "Registrieren" %>
 <% end %>
 </section>
 <%= render "features" %>
