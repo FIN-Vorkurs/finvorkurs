@@ -141,6 +141,14 @@ section#new_post input[type="text"], section#new_post textarea {
   font-size: 4em;
 }
 
+.time {
+  margin: -1.5em 0 1.5em 0;
+}
+
+#posts article {
+  margin-bottom: 3em;
+}
+
 @media screen and (max-width: 835px) {
   section#features > div {
     width: 45%;
