@@ -7,5 +7,5 @@
     <% end %>
   </h1>
   <div class="time"><%= post.created_at.to_s :long %></div>
-  <%= post.content %>
+  <%= markdown post.content %>
 </article>
