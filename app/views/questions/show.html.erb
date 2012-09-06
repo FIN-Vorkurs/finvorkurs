@@ -1,6 +1,6 @@
 <section class="question">
 <h2>Frage</h2>
-<p class="text"><%= @question.text %></p>
+<p class="text"><%= markdown @question.text %></p>
 <h3>Antworten</h3>
 <ol>
   <% @question.answers.each do |answer| %>
