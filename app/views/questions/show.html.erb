@@ -4,7 +4,7 @@
 <h3>Antworten</h3>
 <ol>
   <% @question.answers.each do |answer| %>
-    <li><%= link_to answer.text, course_replies_path(answer_id: answer.id), method: :post %></li>
+    <li><%= link_to markdown(answer.text), course_replies_path(answer_id: answer.id), method: :post %></li>
   <% end %>
 </ol>
 <% if current_user.role >= User::ADMIN %>
