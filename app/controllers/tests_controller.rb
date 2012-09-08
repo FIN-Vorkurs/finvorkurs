@@ -14,6 +14,7 @@ before_filter :authenticate_user!
     @test_result = @course.test_results.create
     @test_result.score = @score
     @user.test_results << @test_result
+    Log.new(message: "#{@user.email} finished the test for #{@course.title} with #{@score}%").save
   end
 
 end
