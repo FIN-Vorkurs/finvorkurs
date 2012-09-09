@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     self.answers.joins(:question).where questions: {course_id: course}
   end
 
+  def message
+    "#{self.email} has created an Account"
+  end
+
 
   ADMIN = 2
   TUTOR = 1
