@@ -30,11 +30,12 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     panel "Events" do
-      table_for Event.all do |event|
+      table_for Event.since(24.hours.ago) do |event|
         column :created_at
         column :message
       end
     end
 
   end
+
 end

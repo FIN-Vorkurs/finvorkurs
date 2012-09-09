@@ -2,10 +2,10 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :enrollments, dependent: :destroy
   has_many :courses, through: :enrollments
-  has_many :replies
+  has_many :replies, dependent: :destroy
   has_many :answers, through: :replies
   has_many :questions, through: :answers
-  has_many :test_results
+  has_many :test_results, dependent: :destroy
   attr_accessible :email, :name, :password, :password_confirmation, :role
   validates :password, :presence => true, :on => :create
   validates :email, :uniqueness => true
