@@ -1,6 +1,9 @@
 FinVorkurs::Application.routes.draw do
 
   scope ENV['RAILS_RELATIVE_URL_ROOT'] || '/' do
+
+    ActiveAdmin.routes(self)
+
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "sessions#new", :as => "login"
     get "signup" => "users#new", :as => "signup"

@@ -4,7 +4,6 @@ class Course < ActiveRecord::Base
   has_many :answers, through: :questions
   has_many :questions
   has_many :test_results
-  belongs_to :test
 
   def resume_test_path user
     next_question = (self.questions - user.questions).first
