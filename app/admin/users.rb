@@ -6,7 +6,8 @@ ActiveAdmin.register User do
   filter :name
 
   index do
-    column :id
+    selectable_column
+    id_column
     column :email
     column :name
     column "Courses" do |user|
