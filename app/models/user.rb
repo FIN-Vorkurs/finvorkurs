@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :answers, through: :replies
   has_many :questions, through: :answers
   has_many :test_results
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :role
   validates :password, :presence => true, :on => :create
   validates :email, :uniqueness => true
   validates :name, presence: true, :if => proc { |u| not u.courses.empty? }
