@@ -27,7 +27,14 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-
     end
+
+    panel "Events" do
+      table_for Event.all do |event|
+        column :created_at
+        column :message
+      end
+    end
+
   end
 end
