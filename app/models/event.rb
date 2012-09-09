@@ -31,7 +31,7 @@ class Event < ActiveRecord::Base
     test_results.map do |test_result|
       test_result_event = Event.new
       test_result_event.created_at = test_result.created_at
-      test_result_event.message = "#{test_result.user.name} finished the test for #{test_result.course.title} with #{test_result.score} %"
+      test_result_event.message = "#{test_result.user.email} finished the test for #{test_result.course.title} with #{test_result.score} %"
       test_result_event
     end
   end
