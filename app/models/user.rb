@@ -1,3 +1,4 @@
+# encoding: utf-8
 class User < ActiveRecord::Base
   has_secure_password
   has_many :enrollments, dependent: :destroy
@@ -9,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :role
   validates :password, :presence => true, :on => :create
   validates :email, :uniqueness => true
+  validates :email, format: {with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, message: 'Ungültige Emailadresse'}
   validates :name, presence: true, :if => proc { |u| not u.courses.empty? }
 
   def generate_token column
