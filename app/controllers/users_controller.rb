@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      send_notification_to_admins @user
+      # send_notification_to_admins @user
       redirect_to root_url, :notice => "Registrierung erfolgreich!"
     else
       render "new"
