@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   private
 
   def check_permission!
-    unless @user == current_user || current_user.role == User::ADMIN
+    unless @user == current_user 
       abort "No Permission"
     end
   end

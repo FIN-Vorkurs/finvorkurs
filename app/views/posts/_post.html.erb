@@ -1,10 +1,6 @@
 <article>
   <h1>
     <%= post.title %>
-    <% if !!current_user && current_user.role == User::ADMIN %>
-      <%= link_to ' &#x02df;'.html_safe, post, method: :delete,
-        confirm: 'Achtung! Nachricht wirklich löschen?' %>
-    <% end %>
   </h1>
   <div class="time"><%= post.created_at.to_s :long %></div>
   <%= markdown post.content %>

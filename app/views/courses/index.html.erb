@@ -14,9 +14,6 @@
 <% @courses.each do |course| %>
   <div class="course">
     <h2><%= course.title %></h1>
-    <% if current_user && current_user.role >= User::ADMIN %>
-      <%= link_to "Teilnehmer", course %>
-    <% end %>
     <% if @user and @user.test_results.where(course_id: course.id).first and @user.test_results.where(course_id: course.id).first.score %>
       <div class="test done">
         <span>Test <br /> abgeschlossen</span>
