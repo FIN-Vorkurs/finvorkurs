@@ -29,7 +29,7 @@ ActiveAdmin.register Group do
     f.inputs 'Group' do
       f.input :user
       f.input :course
-      f.input :enrollments, as: :check_boxes, collection: Enrollment.where('course_id = ?', f.object.id) 
+      f.input :enrollments, as: :check_boxes, collection: Enrollment.where('course_id = ?', f.object.course.id) 
     end
     f.buttons
   end
