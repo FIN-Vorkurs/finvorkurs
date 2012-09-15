@@ -5,6 +5,9 @@ ActiveAdmin.register Group do
     column :id
     column 'Tutor', :user
     column :course
+    column 'Users' do |group|
+      group.users.count
+    end
     default_actions
   end
 

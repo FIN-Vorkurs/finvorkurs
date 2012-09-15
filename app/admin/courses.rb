@@ -5,6 +5,9 @@ ActiveAdmin.register Course do
     column :fee
     column :from
     column :to
+    column 'Enrollments' do |course|
+      course.enrollments.count
+    end
     default_actions
   end
 
