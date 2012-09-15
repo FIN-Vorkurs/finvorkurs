@@ -7,4 +7,21 @@ ActiveAdmin.register Course do
     column :to
     default_actions
   end
+
+  show do |course|
+    attributes_table do
+      row :title
+      row :fee
+      row :from
+      row :to
+    end
+
+    panel pluralize course.enrollments.count, "Enrollment" do
+      table_for course.enrollments do |enrollment|
+        column :user
+        column :created_at
+      end
+    end
+
+  end
 end
