@@ -28,7 +28,7 @@ ActiveAdmin.register Group do
   form do |f|
     f.inputs 'Group' do
       if f.object.new_record?
-        f.input :user
+        f.input :user, collection: User.where('role = ?', User::TUTOR)
         f.input :course
       else
         f.input :user
