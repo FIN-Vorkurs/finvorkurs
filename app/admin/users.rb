@@ -22,6 +22,14 @@ ActiveAdmin.register User do
       row :email
       row :name
       row :created_at
+      row 'Test Results' do
+        ul do
+          user.test_results.each do |t|
+            li "#{t.course.title} #{t.score}%"
+          end
+        end
+      end
+
       row "Enrollments" do
         ul do
           user.enrollments.each do |enrollment|
