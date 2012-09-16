@@ -1,0 +1,15 @@
+<tr>
+  <td><h1><%= user.id %></h1></td>
+  <td><h2><%= user.name %></h2></td>
+  <% user.enrollments.each do |enrollment| %>
+    <td>
+      <h3><%= enrollment.course.title %></h3>
+      <% if enrollment.group %>
+        <p><%= enrollment.group.user %></p>
+      <% end %>
+    </td>
+  <% end %>
+  <td>
+    <p>bezahlt (Stempel)</p>
+  </td>
+</tr>
