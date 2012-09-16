@@ -1,7 +1,7 @@
 <section class="centered">
   <h1>Programm</h1>
   <% @schedule.each do |e| %>
-    <article>
+    <article class="well">
     <h3><%= e.name %></h3>
     <date><%= e.date.to_formatted_s(:long) %></date> <%= e.place %>
     <%= markdown e.description %>
