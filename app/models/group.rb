@@ -5,4 +5,8 @@ class Group < ActiveRecord::Base
   has_many :users, through: :enrollments
   accepts_nested_attributes_for :users
   # attr_accessible :title, :body
+  
+  def to_s
+    "#{self.course.title}: #{self.user.name}"
+  end
 end

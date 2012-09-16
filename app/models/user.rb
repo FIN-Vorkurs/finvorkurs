@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :questions, through: :answers
   has_many :test_results, dependent: :destroy
   has_many :groups, through: :enrollments
-  attr_accessible :email, :name, :password, :password_confirmation, :role
+  attr_accessible :email, :name, :password, :password_confirmation, :role, :group_ids
   validates :password, :presence => true, :on => :create
   validates :email, :uniqueness => true
   validates :email, format: {with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, message: 'Ungültige Emailadresse'}

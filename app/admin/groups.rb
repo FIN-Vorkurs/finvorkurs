@@ -33,7 +33,7 @@ ActiveAdmin.register Group do
       else
         f.input :user
         f.input :course
-        f.input :enrollments, as: :check_boxes, collection: Enrollment.where('course_id = ?', f.object.course.id)
+        f.input :enrollments, as: :check_boxes, collection: Enrollment.all(joins: {user: :test_results}, conditions: {course_id: f.object.course.id, 'test_results.course_id' => f.object.course.id}, order: 'test_results.score ASC')
       end
     end
     f.buttons

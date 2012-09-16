@@ -20,10 +20,13 @@ ActiveAdmin.register Course do
     end
 
     panel pluralize course.enrollments.count, "Enrollment" do
-      table_for Enrollment.all(joins: {user: :test_results}, conditions: {course_id: course.id, 'test_results.course_id' => course.id}, order: 'test_results.score ASC') do
+      table_for course.enrollments do
         column :user
         column 'Score' do |enrollment|
           enrollment.user.test_results.where('course_id = ?', enrollment.course.id).first.score
+        end
+        column 'Group' do |enrollment|
+          enrollment.group
         end
         column :created_at
       end
