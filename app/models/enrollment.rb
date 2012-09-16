@@ -9,7 +9,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def to_s
-    self.user.name
+    "#{self.user.name} (#{self.user.test_results.where('course_id = ?', self.course.id).first.score}%)"
   end
 
 end
