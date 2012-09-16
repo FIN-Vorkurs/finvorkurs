@@ -3,7 +3,7 @@
   <% @schedule.each do |e| %>
     <article>
     <h3><%= e.name %></h3>
-    <date><%= e.date %></date> <%= e.place %>
+    <date><%= e.date.to_formatted_s(:long) %></date> <%= e.place %>
     <%= markdown e.description %>
     </article>
   <% end %>
