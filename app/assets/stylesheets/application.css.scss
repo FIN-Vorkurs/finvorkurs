@@ -149,6 +149,14 @@ section#new_post input[type="text"], section#new_post textarea {
   margin-bottom: 3em;
 }
 
+.well {
+  padding: 0 1em;
+}
+
+.well.today {
+  background: #cfc;
+}
+
 @media screen and (max-width: 835px) {
   section#features > div {
     width: 45%;
