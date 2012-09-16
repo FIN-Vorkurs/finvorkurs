@@ -9,7 +9,11 @@ class Enrollment < ActiveRecord::Base
   end
 
   def to_s
-    "#{self.user.name} (#{self.user.test_results.where('course_id = ?', self.course.id).first.score}%)"
+    if self.user.test_results.empty?
+      "#{self.user.name} #{self.group})"
+    else
+      "#{self.user.name} (#{self.user.test_results.where('course_id = ?', self.course.id).first.score}% #{self.group})"
+    end
   end
 
 end

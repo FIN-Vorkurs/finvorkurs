@@ -10,4 +10,8 @@ class Course < ActiveRecord::Base
     next_question && [self, next_question]
   end
 
+  def to_s
+    self.user.name
+  end
+
 end
