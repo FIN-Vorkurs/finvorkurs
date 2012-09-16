@@ -1,5 +1,4 @@
 ActiveAdmin.register User do
-  config.paginate = false
   menu priority: 2
   filter :id
   filter :email
