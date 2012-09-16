@@ -22,9 +22,6 @@ ActiveAdmin.register Course do
     panel pluralize course.enrollments.count, "Enrollment" do
       table_for course.enrollments do
         column :user
-        column 'Score' do |enrollment|
-          enrollment.user.test_results.where('course_id = ?', enrollment.course.id).first.score
-        end
         column 'Group' do |enrollment|
           enrollment.group
         end
