@@ -6,7 +6,7 @@
       <td>
         <h3><%= enrollment.course.title %></h3>
         <% if enrollment.group %>
-          <p><%= enrollment.group.user.name %></p>
+          <p><%= "Gruppe #{enrollment.group.id}, #{enrollment.group.user.name}" %></p>
         <% end %>
       </td>
     <% end %>
@@ -15,3 +15,4 @@
     </td>
   </tr>
 </table>
+<br \>
