@@ -4,6 +4,7 @@ ActiveAdmin.register User do
   filter :email
   filter :name
   filter :present, as: :select
+  filter :paid, as: :select
 
   member_action :pay, method: :put do
     user = User.find(params[:id])
