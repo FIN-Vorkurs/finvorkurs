@@ -23,6 +23,12 @@ ActiveAdmin.register User do
 
 
   index do
+    h2 do
+      money = User.all.inject(0) do |sum, user|
+        sum += if user.paid? then user.enrollments.count * 10 else 0 end
+      end 
+      "#{money} EUR"
+    end
     selectable_column
     id_column
     column :email
