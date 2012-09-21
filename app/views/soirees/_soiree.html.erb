@@ -1,0 +1,10 @@
+<% if soiree.date.today? %>
+  <article class="well today">
+<% else %>
+  <article class="well">
+<% end %>
+  <i>Abendveranstallung</i>
+  <h3><%= soiree.name %></h3>
+  <date><%= soiree.date.to_formatted_s(:long) %></date> <%= soiree.place %>
+  <%= markdown soiree.description %>
+</article>
