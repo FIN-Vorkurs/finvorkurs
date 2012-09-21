@@ -14,7 +14,8 @@ FinVorkurs::Application.routes.draw do
               :password_resets, 
               :posts,
               :logs,
-              :schedules
+              :schedules,
+              :downloads
 
     resources :courses do
       resources :enrollments

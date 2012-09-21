@@ -17,6 +17,9 @@
     <% end %>
     <nav>
     <ul>
+      <% if current_user %>
+        <li><%= link_to "Downloads", downloads_path %></li>
+      <% end %>
         <li><%= link_to "Programm", schedules_path %></li>
         <li><%= link_to "Kurse", courses_path %></li>
         <li><%= link_to "Neuigkeiten", posts_path %></li>
