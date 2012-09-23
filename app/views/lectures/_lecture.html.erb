@@ -1,6 +1,9 @@
 <article class="well lecture">
   <i>Vorlesung</i>
   <h3><%= lecture.name %></h3>
-  <date><%= lecture.date.to_formatted_s(:long) %></date> <%= lecture.room %>
+  <date>
+    <%= "#{localize lecture.date, format: '%A'}, #{lecture.date.to_formatted_s(:long)}" %>
+  </date>
+  <%= lecture.room %>
   <section><%= markdown lecture.description %></section>
 </article>

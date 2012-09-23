@@ -5,6 +5,9 @@
 <% end %>
   <i>Abendveranstallung</i>
   <h3><%= soiree.name %></h3>
-  <date><%= soiree.date.to_formatted_s(:long) %></date> <%= soiree.place %>
+  <date>
+    <%= "#{localize soiree.date, format: '%A'}, #{soiree.date.to_formatted_s(:long)}" %>
+  </date>
+  <%= soiree.place %>
   <section><%= markdown soiree.description %></section>
 </article>
