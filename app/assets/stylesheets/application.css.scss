@@ -132,6 +132,10 @@ section#new_post input[type="text"], section#new_post textarea {
   width: 100%;
 }
 
+article > section {
+  margin-top: 1.5em;
+}
+
 .result {
   text-align: center;
 }

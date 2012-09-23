@@ -6,5 +6,5 @@
   <i>Abendveranstallung</i>
   <h3><%= soiree.name %></h3>
   <date><%= soiree.date.to_formatted_s(:long) %></date> <%= soiree.place %>
-  <%= markdown soiree.description %>
+  <section><%= markdown soiree.description %></section>
 </article>
