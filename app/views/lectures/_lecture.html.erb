@@ -2,7 +2,7 @@
   <i>Vorlesung</i>
   <h3><%= lecture.name %></h3>
   <date>
-    <%= "#{localize lecture.date, format: '%A'}, #{lecture.date.to_formatted_s(:long)}" %>
+    <%= localize lecture.date, format: :long %>
   </date>
   <%= lecture.room %>
   <section><%= markdown lecture.description %></section>

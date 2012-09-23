@@ -2,6 +2,6 @@
   <h1>
     <%= post.title %>
   </h1>
-  <div class="time"><%= post.created_at.to_s :long %></div>
+  <div class="time"><%= localize post.created_at, format: :long %></div>
   <%= markdown post.content %>
 </article>
