@@ -2,6 +2,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
+  before_filter :visits_counter
+
+  def visits_counter
+    FNORD_METRIC.event _type: :visit, url: request.fullpath
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

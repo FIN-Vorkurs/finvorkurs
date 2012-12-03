@@ -9,6 +9,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :test do
+  gem 'rake'
+end
+
 group :production do
   gem 'pg'
 end
@@ -17,6 +21,7 @@ gem 'thin'
 gem 'rdiscount'
 gem 'activeadmin', git: 'git://github.com/maknoll/active_admin.git'
 gem 'rails-i18n'
+gem 'fnordmetric'
 
 # Gems used only for assets and not required
 # in production environments by default.

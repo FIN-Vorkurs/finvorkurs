@@ -6,7 +6,6 @@ one:
   fee: 1
   from: 2012-04-13
   to: 2012-04-13
-  test: 
 
 two:
   title: MyString
@@ -14,4 +13,3 @@ two:
   fee: 1
   from: 2012-04-13
   to: 2012-04-13
-  test: 
