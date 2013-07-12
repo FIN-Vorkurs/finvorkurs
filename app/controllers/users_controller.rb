@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    params[:user].delete(:role) unless params[:user][:role].to_i <= @current_user.role
+
     @user = User.find(params[:id])
     check_permission!
     if @user.update_attributes(params[:user])
