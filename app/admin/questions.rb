@@ -2,14 +2,15 @@
 ActiveAdmin.register Question do
   config.clear_sidebar_sections!
 
-  scope :all, default: true
-  Course.all.each do |course|
-    scope course.title do
-      Question.where "course_id = ?", course
-    end
-  end
-
   index do
+
+    scope :all, default: true
+    Course.all.each do |course|
+      scope course.title do
+        Question.where "course_id = ?", course
+      end
+    end
+
     selectable_column
     column :text
     default_actions
