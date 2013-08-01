@@ -18,18 +18,16 @@ ActiveAdmin.register Question do
   end
 
   form do |f|
-    f.inputs 'question' do
+    f.inputs 'Frage' do
       f.input :course
       f.input :text
     end
 
     f.has_many :answers do |answer|
-      answer.inputs do
-        answer.input :text
-        answer.input :correct, label: 'korrekte Antwort'
-        if !answer.object.nil?
-          answer.input :_destroy, :as => :boolean, label: 'löschen'
-        end
+      answer.input :text
+      answer.input :correct, label: 'korrekte Antwort'
+      if !answer.object.nil?
+        answer.input :_destroy, :as => :boolean, label: 'löschen'
       end
     end
     f.buttons
