@@ -7,6 +7,7 @@ gem 'rails'
 
 group :development do
   gem 'sqlite3'
+  gem 'foreman'
 end
 
 group :test do
