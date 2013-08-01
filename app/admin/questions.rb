@@ -1,6 +1,20 @@
 # encoding: UTF-8
 ActiveAdmin.register Question do
-  
+  config.clear_sidebar_sections!
+
+  scope :all, default: true
+  Course.all.each do |course|
+    scope course.title do
+      Question.where "course_id = ?", course
+    end
+  end
+
+  index do
+    selectable_column
+    column :text
+    default_actions
+  end
+
   show do |question|
 
     attributes_table do
@@ -18,16 +32,16 @@ ActiveAdmin.register Question do
   end
 
   form do |f|
-    f.inputs 'Frage' do
+    f.inputs do
       f.input :course
       f.input :text
     end
 
     f.has_many :answers do |answer|
       answer.input :text
-      answer.input :correct, label: 'korrekte Antwort'
+      answer.input :correct, label: 'correct'
       if !answer.object.nil?
-        answer.input :_destroy, :as => :boolean, label: 'löschen'
+        answer.input :_destroy, :as => :boolean, label: 'delete'
       end
     end
     f.buttons
