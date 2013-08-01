@@ -33,7 +33,11 @@ FinVorkurs::Application.routes.draw do
     Precious::App.set(:wiki_options, {:universal_toc => false})
     mount Precious::App, at: 'wiki'
 
-    ActiveAdmin.routes(self)
+    begin
+      ActiveAdmin.routes(self)
+    rescue Exception => e
+      puts "ActiveAdmin: #{e.class}: #{e}"
+    end
 
   end
 end
