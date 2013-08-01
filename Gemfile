@@ -20,7 +20,7 @@ end
 
 gem 'thin'
 gem 'rdiscount'
-gem 'activeadmin'
+gem 'activeadmin', git: 'git://github.com/maknoll/active_admin.git'
 gem 'rails-i18n'
 gem 'fnordmetric'
 gem 'gollum'
