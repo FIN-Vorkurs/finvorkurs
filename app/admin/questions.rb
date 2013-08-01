@@ -1,3 +1,4 @@
+# encoding: UTF-8
 ActiveAdmin.register Question do
   
   show do |question|
