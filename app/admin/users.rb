@@ -3,6 +3,7 @@ ActiveAdmin.register User do
   filter :id
   filter :email
   filter :name
+  filter :role
   filter :present, as: :select
   filter :paid, as: :select
 
@@ -33,6 +34,7 @@ ActiveAdmin.register User do
     id_column
     column :email
     column :name
+    column :role
     column "Courses" do |user|
       user.courses.count
     end
