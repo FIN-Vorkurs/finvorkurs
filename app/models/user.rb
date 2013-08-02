@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true
   validates :email, format: {with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, message: 'Ungültige Emailadresse'}
   validates :name, presence: true, :if => proc { |u| not u.courses.empty? }
+  accepts_nested_attributes_for :enrollments, allow_destroy: true
 
   def generate_token column
     begin

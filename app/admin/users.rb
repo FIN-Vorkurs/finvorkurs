@@ -84,6 +84,15 @@ ActiveAdmin.register User do
       f.input :name
       f.input :role, as: :select, collection: {'User' => 0, 'Tutor' => 1, 'Admin' => 2}
     end
+
+    f.has_many :enrollments do |enrollment|
+      enrollment.input :course
+      enrollment.input :group
+      if !enrollment.object.nil?
+        enrollment.input :_destroy, :as => :boolean, label: 'delete'
+      end
+    end
+
     f.buttons
   end
 end
