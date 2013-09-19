@@ -12,7 +12,7 @@ class Enrollment < ActiveRecord::Base
     if self.user.test_results.where('course_id = ?', self.course.id).empty?
       "#{self.user.name} #{self.group}"
     else
-      "#{self.user.name} (#{self.user.test_results.where('course_id = ?', self.course.id).first.score}% #{self.group} #{user.answers.where('question_id = ?', 31).text} #{user.answers.where('question_id = ?', 32).text})"
+      "#{self.user.name} (#{self.user.test_results.where('course_id = ?', self.course.id).first.score}% #{self.group} #{self.user.answers.where('question_id = ?', 31).first.text} #{self.user.answers.where('question_id = ?', 32).first.text})"
     end
   end
 
